@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gentium Book Plus', serif;
+}
+html{
+ height: 100%;
+}
+body{
+    height: 100%;
+}
+.backdrop{
+    width: 100%;
+    height:100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),  rgba(0,0,0,0.75)), url(./images/backgroundnum.jpg);
+    background-size: contain;
+    background-position: center;
+
+}
+
+
+nav{
+    padding: 20px 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1{
+    color:#fff;
+    font-size: 50px;
+    margin-left: 40px;
+    flex:1
+}
+nav ul{
+    list-style: none;
+    display:flex;
+    margin-right: 30px;
+    justify-content: space-around;
+    flex:2
+    
+}
+nav li{
+    display:inline-block;
+    position:relative;
+}
+
+nav ul li::after{
+    content: '';
+    height:3px;
+    width:0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom:-5px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+nav ul li:hover::after{
+    width:100%;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.number-guess-game{
+    color:#fff;
+    width:50%;
+    margin:20px auto;
+    border:#009688 solid 4px;
+    border-radius: 4px;
+    padding: 15px 20px 30px 20px;
+    font-size: 18px;
+    background-image:linear-gradient(rgba(0,0,0,0.85),  rgba(0,0,0,0.85));
+}
+
+.game p{
+    margin-bottom: 5px;
+}
+table{
+    border-collapse: collapse;
+    border:#009688 solid 3px;
+    font-size: 15px;
+    margin: 0 auto;
+    width:50%;
+    table-layout: fixed;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+th, td{
+    border:#009688 solid 3px;
+}
+
+form [type="text"]{
+    margin:5px 0;
+    padding:5px;
+}
+
+button{
+width:100px;
+padding:5px 0;
+text-align: center;
+margin: 10px 0;
+border-radius: 25px;
+font-weight: bold;
+border: 2px solid #009688;
+background: transparent;
+color: #fff;
+cursor: pointer;
+position:relative;
+overflow:hidden; 
+z-index: 6;
+
+}
+
+span{
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span{
+    width:100%;
+}
+
+.outcome{
+    text-align: center;
+    font-size: 18px;
+}

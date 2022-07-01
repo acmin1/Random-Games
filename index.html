@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess A Random Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<script defer src="./script.js"></script>
+</head>
+<body>
+    <div class="backdrop">
+    <nav>
+<h1>Number Guesser</h1>
+<ul>
+    <li>
+        <a href="#">Game 1</a>
+    </li>
+    <li>
+        <a href="#">Game 2</a>
+    </li>
+    <li>
+        <a href="#">Game 3</a>
+    </li>
+</ul>
+    </nav>
+    
+    <section class="number-guess-game">
+        <div class="game">
+            <h2>Random Number Game:</h2>
+            <p>A random number between 1 and 100 has been generated! Put in your best guess and we'll give you a hint as to whether it is too high or too low :D</p>
+            <form action="">
+                <label for="guessnumber" class="custom-field">Please input your guess:
+                  <br>
+                <input type="text" id="guessnumber" placeholder="Any number 1,2,3..."></label><br>
+                <button class="submit"><span></span>Submit</button>
+            </form>
+            <div class="previous-guesses"><table></table></p>
+            <p class="outcome"></p>
+        </div>
+
+    </section>
+
+    </div>
+
+</body>
+</html>
