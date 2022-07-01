@@ -20,6 +20,7 @@ function restartGame(){
     let button = document.querySelector('.reset-button');
     button.remove();
     attempt=0;
+    submitButton.removeAttribute("submit-stop");
 }
 
 function gameOver(){
@@ -30,6 +31,8 @@ function gameOver(){
     resetButton.innerHTML='Play Again<span></span>';
     game.append(resetButton);
     resetButton.addEventListener('click', restartGame);
+    // remove coloring from submit
+    submitButton.setAttribute("submit-stop", "")
 }
 
 

@@ -136,3 +136,7 @@ button:hover span{
     text-align: center;
     font-size: 18px;
 }
+
+button[submit-stop] span{
+    background: transparent;
+}
