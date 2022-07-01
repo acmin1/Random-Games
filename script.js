@@ -1,8 +1,8 @@
 
-const guessfield = document.querySelector('input[type="text"]');
-const submitbutton = document.querySelector('.submit');
-const previousoutcomepara = document.querySelector('.previous-guesses');
-const gameoutcomepara = document.querySelector('.outcome');
+const guessField = document.querySelector('input[type="text"]');
+const submitButton = document.querySelector('.submit');
+const previousOutcome = document.querySelector('.previous-guesses');
+const gameOutcome = document.querySelector('.outcome');
 const table = document.querySelector('table');
 const game = document.querySelector('.game')
 let attempt = 0;
@@ -13,9 +13,9 @@ table.innerHTML = tablestart;
 // will be used to reset form with attmpt =0
 
 function restartGame(){
-    submitbutton.disabled=false;
-    guessfield.disabled=false;
-    gameoutcomepara.textContent='';
+    submitButton.disabled=false;
+    guessField.disabled=false;
+    gameOutcome.textContent='';
     table.innerHTML=tablestart;
     let button = document.querySelector('.reset-button');
     button.remove();
@@ -23,8 +23,8 @@ function restartGame(){
 }
 
 function gameOver(){
-    submitbutton.disabled=true;
-    guessfield.disabled=true;
+    submitButton.disabled=true;
+    guessField.disabled=true;
     let resetButton = document.createElement('button');
     resetButton.classList.add('reset-button')
     resetButton.innerHTML='Play Again<span></span>';
@@ -34,11 +34,11 @@ function gameOver(){
 
 
 function checkguess(){
-    let guessvalue = Number(guessfield.value);
+    let guessvalue = Number(guessField.value);
     if (guessvalue === randomNumber){
         let result = `<tr><td>${guessvalue}</td><td>Your right!</td>`
         table.innerHTML+= result;
-        gameoutcomepara.textContent = "Congrats! You got it right!";
+        gameOutcome.textContent = "Congrats! You got it right!";
         gameOver();
     }
 
@@ -46,8 +46,8 @@ function checkguess(){
         let result = `<tr><td>${guessvalue}</td><td>Too high!</td>`
         table.innerHTML+= result;
         attempt++;
-        gameoutcomepara.textContent="Wrong! Too high!"
-        guessfield.value='';
+        gameOutcome.textContent="Wrong! Too high!"
+        guessField.value='';
         console.log(attempt);
 
     }
@@ -55,8 +55,8 @@ function checkguess(){
         let result = `<tr><td>${guessvalue}</td><td>Too low!</td>`
         table.innerHTML+= result;
         attempt++;
-        gameoutcomepara.textContent="Wrong! Too low!"
-        guessfield.value='';
+        gameOutcome.textContent="Wrong! Too low!"
+        guessField.value='';
         console.log(attempt);
 
     }
@@ -66,8 +66,8 @@ function checkguess(){
     
 };
 
-submitbutton.addEventListener('click', checkguess);
-guessfield.focus();
+submitButton.addEventListener('click', checkguess);
+guessField.focus();
 
 
 //  gen randomnumber, attempts=0, create p with previous attempts and 'toogigh/low colum'
